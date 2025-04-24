@@ -1,0 +1,91 @@
+body {
+    font-family: 'Papyrus', fantasy; /* Police originale mais lisible */
+    background-color: #f0f8ff; /* Un bleu très clair comme base "calme" */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.calculator {
+    background-image: linear-gradient(45deg, #ff6ec4, #7851a9); /* Dégradé de couleurs vives mais harmonieuses */
+    border: 7px double #00ced1; /* Bordure double épaisse et colorée */
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 12px 12px 8px rgba(0, 0, 0, 0.3); /* Ombre portée marquée */
+    animation: pulsate 5s infinite alternate; /* Animation subtile de la boîte */
+}
+
+@keyframes pulsate {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+.display input {
+    width: calc(100% - 30px);
+    padding: 18px;
+    margin-bottom: 15px;
+    font-size: 26px;
+    text-align: right;
+    border: 4px wavy #ffa07a; /* Bordure ondulée et colorée */
+    background-color: #fff8dc; /* Couleur crème douce pour le contraste */
+    color: #4b0082; /* Violet foncé pour la lisibilité */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.buttons button {
+    padding: 18px;
+    font-size: 22px;
+    border: 3px dotted #3cb371; /* Bordure en pointillés verte */
+    border-radius: 8px;
+    background-color: #f5f5dc; /* Beige clair */
+    color: #d2691e; /* Brun chocolat */
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.buttons button:hover {
+    transform: translateY(-5px) rotate(-3deg); /* Translation et rotation au survol */
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
+}
+
+.buttons button:last-child {
+    grid-column: span 1;
+}
+
+.buttons button:nth-child(1) { /* 'C' */
+    background-color: #ff4d4d; /* Rouge vif */
+    color: #fff;
+    font-weight: bold;
+}
+
+.buttons button:nth-child(2) { /* 'DEL' */
+    background-color: #ffa500; /* Orange */
+    color: #fff;
+}
+
+.buttons button:nth-child(3), /* '/', '*' */
+.buttons button:nth-child(4),
+.buttons button:nth-child(8), /* '-' */
+.buttons button:nth-child(12) /* '+' */ {
+    background-color: #6495ed; /* Bleu */
+    color: #fff;
+}
+
+.buttons button:nth-child(16) { /* '=' */
+    background-color: #228b22; /* Vert forêt */
+    color: #fff;
+    grid-column: span 1;
+    font-size: 24px;
+}
+
+.buttons button:nth-child(17), /* '0' */
+.buttons button:nth-child(18) /* '.' */ {
+    grid-column: span 1;
+}
